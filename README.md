@@ -20,13 +20,13 @@ signals = {'x': [2, -1, 7, 10, -5, 15, 8, -2]}
 print(signals)
 
 # define CTSTL formula
-# Atomic proposition: AP(signal_name:str, op:str, c:int))
-# Negation: Not(phi:Node)
-# And: And(phi1:Node, phi2:Node, ...)
-# Or: Or(phi1:Node, phi2:Node, ...)
-# Always: G(a:int, b:int, phi:Node)
-# Eventually: F(a:int, b:int, phi:Node)
-# Until: U(a:int, b:int, phi:Node, phi2:Node)
+# Atomic proposition: AP(signal_name:str, op:str, c:int))     x>c; x<c
+# Negation: Not(phi:Node)                      Not phi
+# And: And(phi1:Node, phi2:Node, ...)           phi1 And phi2 And ...
+# Or: Or(phi1:Node, phi2:Node, ...)           phi1 Or phi2 Or ...
+# Always: G(a:int, b:int, phi:Node)           G_[a,b] phi                  
+# Eventually: F(a:int, b:int, phi:Node)           F_[a,b] phi
+# Until: U(a:int, b:int, phi1:Node, phi2:Node)           phi1 U_[a,b] phi2
 
 # G_[0,2] C^3_[1,5] x>0
 formula = G(0,2,
